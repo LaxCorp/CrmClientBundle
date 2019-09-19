@@ -1,0 +1,33 @@
+# Learn more about services, parameters and containers at
+# http://symfony.com/doc/current/book/service_container.html
+parameters:
+#    parameter_name: value
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: true
+
+    LaxCorp\CrmClientBundle\Helper\Api:
+        arguments:
+            $apiUrl: '%crm_client.api_url%'
+            $siteUrl: '%crm_client.site_url%'
+            $sourceName: '%crm_client.source_name%'
+            $username: '%crm_client.username%'
+            $accessKey: '%crm_client.access_key%'
+            $enabled: '%crm_client.enabled%'
+
+    LaxCorp\CrmClientBundle\Helper\CrmAccount:
+
+    LaxCorp\CrmClientBundle\Helper\CrmCalendar:
+
+    LaxCorp\CrmClientBundle\Helper\CrmEvent:
+
+    LaxCorp\CrmClientBundle\Helper\CrmModules:
+
+    LaxCorp\CrmClientBundle\Helper\CrmService:
+
+    LaxCorp\CrmClientBundle\Helper\CrmEntity:
+
+    LaxCorp\CrmClientBundle\Helper\CrmConsignment:
