@@ -4,18 +4,12 @@
   "type": "symfony-bundle",
   "homepage": "https://github.com/LaxCorp/CrmClientBundle",
   "license": "MIT",
-  "minimum-stability": "stable",
   "authors": [
     {
       "name": "Lax Corp",
       "email": "LaxCorp@mail.ru"
     }
   ],
-  "require": {
-    "php": "^7.2"
-  },
-  "suggest": {
-  },
   "autoload": {
     "psr-4": {
       "LaxCorp\\CrmClientBundle\\": ""

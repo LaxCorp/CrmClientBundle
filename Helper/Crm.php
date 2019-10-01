@@ -5,11 +5,13 @@ namespace LaxCorp\CrmClientBundle\Helper;
 use Doctrine\Common\Annotations\Reader;
 use JMS\Serializer\Annotation;
 use JMS\Serializer\Serializer;
+use JMS\Serializer\SerializerInterface;
 use LaxCorp\CrmClientBundle\Exception\CrmClientException;
 use LaxCorp\CrmClientBundle\Exception\CrmException;
 use LaxCorp\CrmClientBundle\Model\CrmModelInterface;
 use Salaros\Vtiger\VTWSCLib\WSException;
 use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
+use Twig\Environment;
 
 /**
  * @inheritdoc
@@ -23,7 +25,7 @@ abstract class Crm
     public $api;
 
     /**
-     * @var Serializer
+     * @var SerializerInterface
      */
     private $serializer;
 
@@ -33,14 +35,14 @@ abstract class Crm
     private $reader;
 
     /**
-     * @var EngineInterface
+     * @var Environment
      */
     private $templating;
 
     /**
      * @inheritdoc
      */
-    public function __construct(Api $api, Serializer $serializer, Reader $reader, EngineInterface $templating)
+    public function __construct(Api $api, SerializerInterface $serializer, Reader $reader, Environment $templating)
     {
         $this->api        = $api;
         $this->serializer = $serializer;
